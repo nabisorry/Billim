@@ -1,8 +1,6 @@
-import Image from "next/image";
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
-import styles from "./page.module.css";
-import { Button } from "@repo/ui/button";
+import Image from 'next/image';
+import styles from './page.module.css';
+import { Button } from '@billim/ui/Button';
 
 function Gradient({
   conic,
@@ -22,32 +20,32 @@ function Gradient({
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
     />
   );
 }
 
 const LINKS = [
   {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
+    title: 'Docs',
+    href: 'https://turbo.build/repo/docs',
+    description: 'Find in-depth information about Turborepo features and API.',
   },
   {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
-    description: "Learn more about monorepos with our handbook.",
+    title: 'Learn',
+    href: 'https://turbo.build/repo/docs/handbook',
+    description: 'Learn more about monorepos with our handbook.',
   },
   {
-    title: "Templates",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
-    description: "Choose from over 15 examples and deploy with a single click.",
+    title: 'Templates',
+    href: 'https://turbo.build/repo/docs/getting-started/from-example',
+    description: 'Choose from over 15 examples and deploy with a single click.',
   },
   {
-    title: "Deploy",
-    href: "https://vercel.com/new",
+    title: 'Deploy',
+    href: 'https://vercel.com/new',
     description:
-      " Instantly deploy your Turborepo to a shareable URL with Vercel.",
+      ' Instantly deploy your Turborepo to a shareable URL with Vercel.',
   },
 ];
 
@@ -55,17 +53,14 @@ export default function Page(): JSX.Element {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          examples/basic&nbsp;
-          <Code className={styles.code}>docs</Code>
-        </p>
+        <p>examples/basic&nbsp;</p>
         <div>
           <a
             href="https://vercel.com?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"
             rel="noopener noreferrer"
             target="_blank"
           >
-            By{" "}
+            By{' '}
             <Image
               alt="Vercel Logo"
               className={styles.vercelLogo}
@@ -78,20 +73,18 @@ export default function Page(): JSX.Element {
         </div>
       </div>
 
-      <Button appName="docs" className={styles.button}>
-        Click me!
-      </Button>
+      <Button>Click me!</Button>
 
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.logos}>
             <div className={styles.circles}>
               <Image
-                alt="Turborepo"
+                alt=""
                 height={614}
                 src="circles.svg"
                 width={614}
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: 'none' }}
               />
             </div>
             <div className={styles.logoGradientContainer}>
@@ -100,12 +93,12 @@ export default function Page(): JSX.Element {
 
             <div className={styles.logo}>
               <Image
-                alt=""
+                alt="Turborepo"
                 height={120}
                 priority
                 src="turborepo.svg"
                 width={120}
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: 'none' }}
               />
             </div>
           </div>
@@ -130,14 +123,6 @@ export default function Page(): JSX.Element {
             </svg>
           </div>
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        {LINKS.map(({ title, href, description }) => (
-          <Card className={styles.card} href={href} key={title} title={title}>
-            {description}
-          </Card>
-        ))}
       </div>
     </main>
   );

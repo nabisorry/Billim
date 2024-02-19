@@ -2,14 +2,17 @@
   "name": "billim",
   "private": true,
   "scripts": {
+    "clean": "rm -rf node_modules && rm -f pnpm-lock.yaml && pnpm recursive exec -- rm -rf node_modules",
+    "install-deps": "pnpm install",
+    "reinstall": "npm run clean && npm run install-deps",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@billim/eslint-config": "workspace:*",
+    "@billim/typescript-config": "workspace:*",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },
